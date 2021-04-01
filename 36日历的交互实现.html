@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				border-radius:.5vw;
+				transition: .3s;
+				/* text-align: center; */
+			}
+			.flex{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+			}
+			body{
+				background: #ADD8E6;
+				justify-content: center;
+				text-align: center;
+			}
+			#calendar{
+				background: #D8BFD8;
+				width: 28vw;
+				height: 38vw;
+				margin: 5vw auto;
+			}
+			#calendar ul{
+				margin-top: 1vw;
+				background: #FFEFD5;
+				width: 25vw;
+				height: 25vw;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+			#calendar ul li{
+				margin: .1vw ;
+				background: #FFFAFA;
+				/* opacity: .8; */
+				list-style: none;
+				cursor: pointer;
+				width: 7vw;
+				height: 5vw;
+				/* border-bottom: .1 solid #808080; */
+			}
+			#calendar h2,p{
+				font-size: 1.3vw;
+				margin-top: .8vw;
+			}
+			.flex p{
+				/* background: #808080; */
+				margin-bottom: 1vw;
+				font-size: 1vw;
+			}
+			#text{
+				margin: 1vw;
+				background: #FFFAFA;
+				width: 25vw;
+				height: 8vw;
+			}
+			#text p{
+				font-size: 1.2vw;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="calendar" class="flex">
+			<ul class="flex">
+				<li class='flex'><h2>1</h2><p>JAN</p></li>
+				<li class='flex'><h2>2</h2><p>FER</p></li>
+				<li class='flex'><h2>3</h2><p>MAR</p></li>
+				<li class='flex'><h2>4</h2><p>APR</p></li>
+				<li class='flex'><h2>5</h2><p>MAY</p></li>
+				<li class='flex'><h2>6</h2><p>JUN</p></li>
+				<li class='flex'><h2>7</h2><p>JUL</p></li>
+				<li class='flex'><h2>8</h2><p>AUG</p></li>
+				<li class='flex'><h2>9</h2><p>SEP</p></li>
+				<li class='flex'><h2>10</h2><p>OCT</p></li>
+				<li class='flex'><h2>11</h2><p>DEC</p></li>
+				<li class='flex'><h2>12</h2><p>NOV</p></li>
+			</ul>
+			<div id="text">
+				<h2>一月黄历</h2>
+				<p>宜 aaaaaaaaaaaaaaa <br>
+				   忌 bbbbbbbbbbbbb</p>
+			</div>
+			
+			<script type="text/javascript">
+				let oDiv=document.getElementById("calendar")
+				let aBtn=document.getElementsByTagName('li')
+				let oTxt=document.getElementById("text")
+				
+				let aData=[
+					'宜：1111111111111<br>忌：1111111111111',
+					'宜：2222222222222<br>忌：1111111111111',
+					'宜：3333333333333<br>忌：1111111111111',
+					'宜：6666666666666<br>忌：1111111111111',
+					'宜：5555555555555<br>忌：1111111111111',
+					'宜：6666666666666<br>忌：1111111111111',
+					'宜：1111111111111<br>忌：1111111111111',
+					'宜：1111111111111<br>忌：1111111111111',
+					'宜：1111111111111<br>忌：1111111111111',
+					'宜：1111111111111<br>忌：1111111111111',
+					'宜：1111111111111<br>忌：1111111111111',
+					'宜：1111111111111<br>忌：1111111111111'
+				]
+				for (let i = 0; i < aBtn.length; i++) {
+					aBtn[i].onmouseover=function(){
+						for (let j = 0; j < aBtn.length; j++) {
+							aBtn[j].style.background='#FFFAFA'
+						}
+						aBtn[i].style.background='none'
+						oTxt.innerHTML='<h2>'+(i+1)+'月份'+'</h2>'+'<p>'+aData[i]+'</p>'
+					}
+				}
+				
+			</script>
+		</div>
+	</body>
+</html>
