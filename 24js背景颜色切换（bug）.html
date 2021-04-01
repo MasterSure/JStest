@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link id="link" rel="stylesheet" type="text/css" href="24purple.css"/>
+	</head>
+	<body>
+		<button onclick="dayMode()">白天模式</button>
+		<button onclick="nightMode()">夜间模式</button>
+		<button onclick="purpleMode()">紫色模式</button>
+		
+		<script type="text/javascript">
+			function dayMode () {
+				document.body.style.background="white"
+			}
+			function nightMode () {
+				document.body.style.background="black"
+			}
+			function purpleMode () {
+				document.getElementById("link").href="24purple.css"
+			}
+		</script>
+	</body>
+</html>
