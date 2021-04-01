@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				font-size: 2vw;
+				margin: 1vw;
+				cursor: pointer;
+			}
+			span:hover{
+				color: orangered;
+				border-bottom: .1vw solid orangered;
+			}
+			div{
+				background: lightblue;
+				margin-top: 1vw;
+				/* display: none; */
+				height: 10vw;
+				line-height: 10vw;
+				font-size: 1.25vw;
+				padding-left: .5vw;
+			}
+		</style>
+	</head>
+	<body>
+		<span>公告</span>
+		<span>规则</span>
+		<span>论坛</span>
+		<span>安全</span>
+		<span>公益</span>
+		<div id="box">000000000000000000000000000000000000000000</div>
+		
+		<script type="text/javascript">
+			let aBtn=document.getElementsByTagName('span')
+			let oDiv=document.getElementById('box')
+			let aData=['000000000000000000000000000000000000000000',
+					   '111111111111111111111111111111111111111111',
+					   '222222222222222222222222222222222222222222',
+					   '333333333333333333333333333333333333333333',
+					   '4444444444444444444444444444444444444444444']
+			
+			for (let i = 0; i < aBtn.length; i++) {
+				aBtn[i].onmouseover=function () {
+					oDiv.innerHTML=aData[i]
+				}
+			}
+		</script>
+	</body>
+</html>
