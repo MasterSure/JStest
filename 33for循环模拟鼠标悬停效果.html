@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				font-size: 2vw;
+				margin: 1vw;
+				cursor: pointer;
+			}
+			
+			.active{
+				color: orangered;
+				border-bottom: .1vw solid orangered;
+			}
+		</style>
+	</head>
+	<body>
+		<span class="active">公告</span>
+		<span>规则</span>
+		<span>论坛</span>
+		<span>安全</span>
+		<span>公益</span>
+		
+		<script type="text/javascript">
+			var aBtn=document.getElementsByTagName('span')
+			for (var i = 0; i < aBtn.length; i++) {
+				aBtn[i].onmouseover=function () {
+					
+					// aBtn[0].className=''
+					// aBtn[1].className=''
+					// aBtn[2].className=''
+					// aBtn[3].className=''
+					// aBtn[4].className=''
+					
+					for (var i = 0; i < aBtn.length; i++) {
+						aBtn[i].className=''
+					}
+					this.className='active'
+				}
+			}
+		</script>
+	</body>
+</html>
