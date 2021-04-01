@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 40vw;
+				height: 20vw;
+				background: #D8BFD8;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="changeBox('background','pink')">变粉</button>
+		<button onclick="changeBox('width','50vw')">变宽</button>
+		<button onclick="changeBox('height','35vw')">变高</button>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			var oDiv=document.getElementById("box")
+			function changeBox (aaa,bbb) {
+				// oDiv.style.background='red'
+				// oDiv.style.width='50vw'
+				// oDiv.style.height='35vw'
+				oDiv.style[aaa]=bbb       //变量用中括号,常量用点
+			}
+		</script>
+	</body>
+</html>
+
