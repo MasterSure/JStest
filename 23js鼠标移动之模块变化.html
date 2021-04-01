@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 20vw;
+				height: 10vw;
+				background: #D8BFD8;
+				line-height: 10vw;
+				text-align: center;
+			}
+			#box{
+				width: 30vw;
+				height: 20vw;
+				box-sizing: border-box;
+				background: thistle;
+				font-size:2vw;
+				color: snow;
+				border-radius: 2vw;
+				text-align: center;
+				padding-top: 8vw;
+				transition: 3s;
+			}
+		</style>
+	</head>
+	<body>
+		<p onmouseover="changeBox()" onmouseout="resetBox()"/>变化</p>
+		<div id="box">
+			勾选表示同意用户协议!
+		</div>
+		
+		<script type="text/javascript">
+			// var oDiv=document.getElementById("box")    全局变量
+			function changeBox() {
+				var oDiv=document.getElementById("box")      //局部变量
+				oDiv.style.width="60vw"
+				oDiv.style.height="30vw"
+				oDiv.style.background='skyblue'
+			}
+			function resetBox() {
+				var oDiv=document.getElementById("box")      //局部变量
+				oDiv.style.width="80vw"
+				oDiv.style.height="40vw"
+				oDiv.style.background='papayawhip'
+			}
+		</script>
+		
+	</body>
+	
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 20vw;
+				height: 10vw;
+				background: #D8BFD8;
+				padding: 2vw;
+			}
+			#box{
+				width: 30vw;
+				height: 20vw;
+				box-sizing: border-box;
+				background: thistle;
+				font-size:2vw;
+				color: snow;
+				text-align: center;
+				padding-top: 8vw;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<p type="checkbox" onmouseover="showBox()" onmouseout="hideBox()"/> </p>
+		<div id="box">
+			勾选表示同意用户协议!
+		</div>
+		
+		<script type="text/javascript">
+			function hideBox () {
+				document.getElementById("box").style.display="none"
+			}
+			function showBox () {
+				document.getElementById("box").style.display="block"
+			}
+		</script>
+		
+	</body>
+	
+</html>
