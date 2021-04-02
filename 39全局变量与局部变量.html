@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function aaa(){           //父函数
+				// 没写var,默认全局变量
+				var a=20              //父函数的局部变量
+				function bbb(){       //子函数
+					alert(a)          //闭包:子函数调用父函数的局部变量
+				}
+				bbb()   //立即执行
+			}
+			aaa()   //立即执行
+			
+		</script>
+	</body>
+</html>
