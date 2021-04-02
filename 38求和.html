@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="txt1" value="" />
+		<input type="text" id="txt2" value="" />
+		<input type="button" id="btn" value="求和" />
+		
+		<script type="text/javascript">
+			let oTxt1=document.getElementById("txt1")
+			let oTxt2=document.getElementById("txt2")
+			let oBtn=document.getElementById("btn")
+			
+			oBtn.onclick=function () {
+				let num1=parseFloat(oTxt1.value)
+				let num2=parseFloat(oTxt2.value)
+				
+				//isNaN()非数判断
+				if (isNaN(num1)) {
+					alert("您输入的第一个输入不含数字，请重输")
+				} else if(isNaN(num2)){
+					alert("您输入的第二个输入不含数字，请重输")
+				} else{
+				alert(num1+num2)
+				}
+				// alert(parseInt(oTxt1.value))
+				// alert(typeof  parseInt(oTxt1.value))
+				// //字符串拼接
+				// alert(parseInt(oTxt1.value))
+				// (oTxt1.value+oTxt2.value)
+			}
+		</script>
+	</body>
+</html>
