@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				width: 3vw;
+				height: 3vw;
+			}
+			#box{
+				width: 30vw;
+				height: 20vw;
+				box-sizing: border-box;
+				background: thistle;
+				font-size:2vw;
+				color: snow;
+				text-align: center;
+				padding-top: 8vw;
+				display: none;
+			}
+			input:checked~div{
+				background: #D8BFD8;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="checkbox" checked/>
+		<div id="box">
+			勾选表示同意用户协议!
+		</div>
+	</body>
+</html>
