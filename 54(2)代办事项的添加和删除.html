@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<p>代办事项</p>
+		<input type="text" id="text"  />
+		<input type="button" id="btn" value="创建待办" />
+		<ul id="list">
+			<!-- <li>买饮料 <a href="#">删除</a> </li> -->
+			<!-- <li></li> -->
+		</ul>
+		
+		<script type="text/javascript">
+			var oTxt=document.getElementById("text")
+			var oBtn=document.getElementById("btn")
+			var oUl=document.getElementById("list")
+			var aLi=document.getElementsByTagName('li')
+			var aA=document.getElementsByTagName('a')
+			
+			oBtn.onclick=function () {
+				var oLi=document.createElement('li')
+				oUl.appendChild(oLi)
+				oLi.innerHTML=oTxt.value+' '+'<a href="#">'+'删除'+'</a>'
+				for (var i = 0; i < aA.length; i++) {
+					aA[i].onclick=function () {
+					this.parentNode.style.display='none'
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>
+

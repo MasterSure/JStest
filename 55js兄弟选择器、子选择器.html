@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				font-size: 20px;
+			}
+			li{
+				margin: 20px;
+			}
+			ul li:first-child{
+				background: #D8BFD8;
+			}
+			ul li:last-child{         //此时不成立,因为li的尾元素已经不是ul的小儿子了
+				background: #FFEFD5;
+			}
+			ul+p{                    //+相邻兄都选择器   ~普通兄弟选择器
+				background: #008000;
+			}
+		</style>
+	</head>
+	<body>
+		<p>AAAAAA</p>
+		<p>BBBBBB</p>
+		<ul>
+			<li>11111</li>
+			<li>22222</li>
+			<li>33333</li>
+			<li>44444</li>
+			<li>55555</li>
+			<h4>66666</h4>
+		</ul>
+		<div>CCCCCC</div>
+		<p>DDDDDD</p>
+		<p>EEEEEE</p>
+		
+		<script type="text/javascript">
+			var oUl=document.getElementsByTagName('ul')[0]
+			// var aLi=document.getElementsByTagName('li')
+			
+				//子节点
+				oUl.firstElementChild.style.background='#87CEEB'
+				oUl.lastElementChild.style.background='#D8BFD8'
+				
+				//兄弟节点
+				//(后一个兄弟)
+				oUl.nextElementSibling.style.background='#87CEEB'
+				//(前一个兄弟)
+				oUl.previousElementSibling.style.background='#FFEFD5'
+				
+		</script>
+	</body>
+</html>

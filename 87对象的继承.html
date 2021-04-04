@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let userA={
+				name:'JACK',
+				age:'20',
+				showInfo:function (work) {
+					alert(this.name+'_'+this.age+'_'+work)
+				}
+			}
+			let userB={
+				name:'ROSE',
+				age:'21'
+			}
+			userA.showInfo('Tencent')
+			userA.showInfo.call(userB,'Alibaba')    //参数也会继承到这个功能（showInfor）上
+		</script>
+	</body>
+</html>

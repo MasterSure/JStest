@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let myStr='ABC123abc_@_4d5e6f.com789'
+			// 正则写法一
+			// let reg=new RegExp('a')
+			// 正则写法二
+			// let reg=/a/
+			
+			// alert(myStr.search(/c/))
+			//i忽略大小写
+			// alert(myStr.search(/c/i))
+			
+			// \d代表一位数字  match取出
+			alert(myStr.match(/\d/))
+			//global全局匹配
+			alert(myStr.match(/\d/g))
+			//\d\d代表两位数字
+			alert(myStr.match(/\d\d/g))
+			//\d+多位匹配
+			alert(myStr.match(/\d+/g))
+			
+			// replace()替换
+			alert(myStr.replace(/c/gi,'$'))
+	</body>
+</html>

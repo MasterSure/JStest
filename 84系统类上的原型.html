@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let arrA=new Array(1,3,5,7)
+			let arrB=new Array(2,4,6,8)
+			//alert(typeof arrA)
+			
+			//定义对象上的方法 
+			//系统类上的原型
+			Array.prototype.sum=function (){
+				let result = 0
+				for (var i = 0; i < this.length; i++) {
+					result += this[i]
+				}
+				return result
+			}
+			
+			alert(arrA.sum())
+			
+			alert(arrB.sum())
+			
+		</script>
+	</body>
+</html>

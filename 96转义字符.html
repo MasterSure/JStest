@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let str1='aQQ bQQ cQQ yQQ zQQ abQQ bcQQ acQQ abcQQ'
+			
+			// 元字符[]内只取一位
+			// alert(str1.match(/[abc]QQ/g))
+			
+			// +号多位匹配
+			// alert(str1.match(/[abc]+QQ/g))
+			
+			// 限定范围
+			// alert(str1.match(/[c-y]QQ/g))
+			
+			let str2='aQQ:012345 bQQ:012345678 cQQ:0123456789000'
+			
+			// \d{4，9}往后4到9位均为\d
+			// alert(str2.match(/[1-9]\d{4,9}/g))
+			
+			let str3='TelA:3400012 TelB:010-3400012 TelC:0551-3400012 TelD:010-63400012'
+			
+			// ?表示可有可无
+			alert(str3.match(/(0\d{2,3}-)?[1-9]\d{6}/g))
+			
+
+		</script>
+	</body>d
+</html>

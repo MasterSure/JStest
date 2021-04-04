@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: green;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			let oDiv=document.getElementById("box")
+			document.onkeydown=function (e){
+				//键位测试
+				// alert(e.keyCode)
+				if (e.keyCode==37||e.keyCode==65) {
+					oDiv.style.left=oDiv.offsetLeft-10+'px'
+				} else if(e.keyCode==38||e.keyCode==87){
+					oDiv.style.top=oDiv.offsetTop-10+'px'
+				} else if(e.keyCode==39||e.keyCode==68){
+					oDiv.style.left=oDiv.offsetLeft+10+'px'
+				} else if(e.keyCode==40||e.keyCode==83){
+					oDiv.style.top=oDiv.offsetTop+10+'px'
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>

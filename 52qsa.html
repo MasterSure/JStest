@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				background: #ADD8E6;
+			}
+			p:nth-child(2){
+				background: #D8BFD8;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p id="text">菜单</p>
+			<ul>
+				<li class="aaa">AAA</li>
+				<li>BBB</li>
+				<li class="aaa">CCC</li>
+				<li>AAA</li>
+			</ul>
+		</div>
+		<p id="foot">尾部</p>
+		<button id="btn">按钮</button>
+		
+		<script type="text/javascript">
+			//querySelectorAll多个查找
+			let $=document.querySelectorAll.bind(document)
+			//qsa  (必须带后标 比较推荐)
+			// $('button')[0].onclick=function () {
+			// 	$('#box')[0].style.background='orange'
+			// 	$('div p')[0].style.background='yellowgreen'
+			// 	$('.aaa')[0].style.background='plum'
+			// 	$('.aaa')[1].style.background='plum'
+			// 	$('p:nth-child(2)')[0].style.background='lightgray'
+			// }
+			//querySelector单个查找
+			let QS=document.querySelector.bind(document)
+			//qs
+			QS('button').onclick=function () {
+				QS('#box').style.background='orange'
+				QS('div p').style.background='yellowgreen'
+				$('.aaa')[0].style.background='plum'
+				$('.aaa')[1].style.background='plum'
+				QS('p:nth-child(2)').style.background='lightgray'
+			}
+			
+		</script>
+	</body>
+</html>

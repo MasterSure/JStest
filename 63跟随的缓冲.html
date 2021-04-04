@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				height: 2000px;
+				background: url(image纹理.jpg);
+			}
+			#box{
+				width: 50px;
+				height: 100px;
+				background: #D8BFD8;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			let oDiv=document.getElementById("box")
+			let timerA
+			
+			function scrollBox (target){
+				clearInterval(timerA)
+				timerA=setInterval(function(){
+					if (oDiv.offsetTop==target) {
+						clearInterval(timerA)
+					} else{
+						let speed=(target-oDiv.offsetTop)/30
+						oDiv.style.top=oDiv.offsetTop+speed+'px'
+					}
+				},30)
+			}
+			
+			window.onscroll=function(){
+				//clientHeight浏览器的一屏高度,scrollTop已滚动过的距离
+				scrollBox(document.documentElement.clientHeight
+				-oDiv.offsetHeight
+				+document.documentElement.scrollTop) 
+				
+			}
+		</script>
+	</body>
+</html>

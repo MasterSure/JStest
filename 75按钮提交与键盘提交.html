@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			textarea{
+				display: block;
+				margin-top: 20px;
+				resize: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text"  />
+		<button>发布</button>
+		<textarea rows="5" cols="30"></textarea>
+		
+		<script type="text/javascript">
+			let $=document.querySelectorAll.bind(document)
+			//按钮点击提交
+			$('button')[0].onclick=function () {
+				$('textarea')[0].value += $('input')[0].value+'\n'
+			}
+			//键盘回车提交
+			$('input')[0].onkeydown=function(e){
+				if(e.keyCode==13){
+					$('textarea')[0].value += $('input')[0].value+'\n'
+				}
+			}
+			//键盘CTRL+回车提交
+			$('input')[0].onkeydown=function(e){
+				if(e.ctrlKey&&e.keyCode==13){
+					$('textarea')[0].value += $('input')[0].value+'\n'
+				}
+			}
+		</script>
+	</body>
+</html>

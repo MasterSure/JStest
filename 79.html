@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: #87CEEB;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="Fbox">
+			<div id="box"></div>
+		</div>
+		
+		<script type="text/javascript">
+			let oDiv=document.getElementById("box")
+			//鼠标按下事件
+			oDiv.onmousedown=function (e) {
+				
+				let distX=e.clientX-oDiv.offsetLeft
+				let distY=e.clientY-oDiv.offsetTop
+				//debug  将oDiv改成document,全部位置都响应
+				document.onmousemove=function (e) {
+					let maxleft=document.documentElement.clientWidth-oDiv.offsetWidth
+					let maxTop=document.documentElement.clientHeight-oDiv.offsetHeight
+					let newX=e.clientX-distX
+					let newY=e.clientY-distY
+					
+					if (newX<0){
+						newX=0
+					}
+					if (newY<0){
+						newY=0
+					}
+					if (newX>=maxleft){
+						newX=maxleft
+					}
+					if (newY>=maxTop){
+						newY=maxTop
+					}
+					oDiv.style.left=newX+'px'
+					oDiv.style.top=newY+'px'
+					
+					// oDiv.style.left=e.clientX-distX+'px'
+					// oDiv.style.top=e.clientY-distY+'px'
+				}
+			}
+			document.onmouseup=function (e) {
+				// oDiv.onmousemove=function (e) {
+				// 	return false
+				// }
+				document.onmousemove=null
+			}
+		</script>
+	</body>
+</html>

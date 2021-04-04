@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 600px;
+				height: 400px;
+				margin: 100px auto;
+				position: relative;
+			}
+			#box img {
+				width: 100%;
+				height: 100%;
+			}
+			#box a {
+				position: absolute;
+				background: gray;
+				opacity: .4;
+				width: 80px;
+				line-height: 400px;
+				text-align: center;
+				font-size: 80px;
+				text-decoration: none;
+				color: #00FFFF;
+			}
+			#box a:hover{
+				opacity: .6;
+			}
+			#right{
+				top: 0;
+				right: 0;
+			}
+			#left{
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<a href="#" id="left"> < </a>
+			<a href="#" id="right"> > </a>
+			<img src="image2.jpg" id="pic" >
+		</div>
+		
+		<script type="text/javascript">
+			let oImg=document.getElementById("pic")
+			let oLeft=document.getElementById("left")
+			let oRight=document.getElementById("right")
+			
+			let arrSrc=['image2.jpg','image3.jpg','image4.jpg','image5.jpg','image6.jpg']
+			
+			let n=0
+			oRight.onclick=function () {
+				n++
+				if(n>arrSrc.length-1){
+					n=0
+				}
+				oImg.src=arrSrc[n]
+			}
+			oLeft.onclick=function () {
+				n--
+				if(n<0){
+					n=arrSrc.length-1
+				}
+				oImg.src=arrSrc[n]
+			}
+		</script>
+	</body>
+</html>

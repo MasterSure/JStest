@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				width: 2000px;
+				height: 2000px;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				background: green;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				transform: translate(-50%,-50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		
+		<script type="text/javascript">
+			let $=document.querySelectorAll.bind(document)
+			document.onmousemove=function (e) {
+				// 	alert(e.clientX+','+e.clientY)
+				
+				//兼容横向滚动条  (一般用不到，不好看)
+				$('div')[0].style.left=e.clientX+document.documentElement.scrollLeft+'px'
+				//兼容纵向滚动条
+				$('div')[0].style.top=e.clientY+document.documentElement.scrollTop+'px'
+			}
+			
+			// window.onclick=function(e){
+			// 	alert(e.clientX+','+e.clientY)
+			// }
+			
+			// document.onclick=function(e){
+			// 	alert(e.clientX+','+e.clientY)
+			// }
+		</script>
+	</body>
+</html>

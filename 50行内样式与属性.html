@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#text{
+				height: 50px;
+				background: #808080;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" style="width: 350px; height: 350px;background: #87CEEB;">
+			<p id="text" style="width150px">一张图片</p>
+			<img id="pic" src="image1.jpeg" width="300px" >
+		</div>
+		
+		<script type="text/javascript">
+			var oDiv=document.getElementById("box")
+			var oTxt=document.getElementById("text")
+			var oImg=document.getElementById("pic")
+			
+			// .style 可读可写 ,getComputedStyle() 只读
+			alert(oDiv.style.width)
+			
+			alert(getComputedStyle(oTxt).width)
+			
+			// .style方法无法获取内联样式也无法获取行内属性值,getComputedStyle()可以
+			alert(oTxt.style.width)
+			alert(oTxt.style.height)
+			alert(getComputedStyle(oTxt).height)
+			
+			// .style跟驼峰式或分隔式
+			oDiv.style.backgroundColor="tan"
+			oDiv.style['background-color']='plum'
+			
+			// .style.setProperty() 只跟分隔式
+			oTxt.style.setProperty('background-color','orange') 
+			
+			// .getAttribute 只能获取行内属性
+			alert(oImg.getAttribute('width'))
+			
+			//setAttribute 设置行内属性值
+			// oTxt.setAttribute('color','blue')
+			// oImg.setAttribute('width',250px)
+			// oImg.setAttribute('style','color: #FFEFD5;' ,'width',250px)
+			
+		</script>
+	</body>
+</html>

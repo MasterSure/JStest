@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="http://baidu.com" method="post" id="login">
+			用户名：<input type="text" name="user" /> <br>
+			密&nbsp;&nbsp;&nbsp;码：<input type="password" name="pwd" /> <br>
+			<input type="submit" value="登录"/>
+		</form>
+		
+		<script type="text/javascript">
+			//封装cookie
+			function setCookie(name,value,days) {
+				let oDate=new Date ()
+				oDate.setDate(oDate.getDate()+days)
+				document.cookie=name+'='+value+';expires='+oDate
+			}
+			
+			// 读取cookie
+			function getCookie(name) {
+				let arr1=document.cookie.split('; ')
+				for (let i = 0; i < arr1.length; i++) {
+					let arr2=arr1[i].split('=')
+					if(arr2[0]==name){
+						return arr2[1]
+					}
+				}
+				return '无匹配数据'
+			}
+			
+			//删除getCookie
+			function delCookie (name) {
+				setCookie(name,null,-1)
+			}
+			
+			let oForm=document.getElementById("login")
+			let oUser=document.getElementsByName("user")[0]
+			let oPwd=document.getElementsByName("pwd")[0]
+			
+			oForm.onsubmit=function () {
+				// 设置cookie,写入cookie文件中
+				setCookie('user',oUser.value,7)
+				setCookie('password',oPwd.value,3)
+			}
+			// 从cookie文件中读取数据,填入表单控件中
+			oUser.value=getCookie('user')
+			oPwd.value=getCookie('pwd')
+		</script>
+	</body>
+</html>

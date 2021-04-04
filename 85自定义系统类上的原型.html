@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//自定义系统类上的原型
+			function CreateUser(userName,userQQ){
+				this.name=userName
+				this.qq=userQQ
+				// this.showName=function (){
+				// 	alert('姓名:'+this.name)
+				// }
+				// this.showQQ=function (){
+				// 	alert('QQ号:'+this.qq)
+				// }
+				//封装后需返回对象,以供外部使用
+				// return obj
+			}
+			
+			
+			
+			//调用构造函数       
+			let objA=new CreateUser('JACK','12345')  
+			objA.showName()
+			objA.showQQ()
+			
+			let objB=new CreateUser('ROSE','12345')
+			objB.showName()
+			objB.showQQ()
+			
+		</script>
+	</body>
+</html>

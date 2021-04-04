@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- BOM -->
+		<button>Window.location</button>
+		<button>Window.open</button>
+		<button>Window.close</button>
+		<button>Window.write</button>
+		
+		<script type="text/javascript">
+			
+			document.getElementsByTagName('button')[0].onclick=function (){
+				//当前链接
+				window.location='http://www.baidu.com'
+			}
+			document.getElementsByTagName('button')[1].onclick=function (){
+				//打开新窗口
+				window.location='http://www.mi.com'
+			}
+			document.getElementsByTagName('button')[2].onclick=function (){
+				//关闭当前窗口
+				window.close
+			}
+			document.getElementsByTagName('button')[3].onclick=function (){
+				//关闭当前窗口,慎用
+				document.write('整个页面重写')  
+			}
+			
+		</script>
+	</body>
+</html>

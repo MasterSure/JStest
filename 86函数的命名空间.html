@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let CreateUser = {}
+			//函数命名空间：设置不同的命名空间
+			CreateUser.jack = {}     //“{}”的含义就是构造对象  等价于 new Object()
+			CreateUser.rose = {}
+			CreateUser.tim = {}
+			
+			CreateUser.jack.showName=function (){
+				alert('AAA')
+			}
+			CreateUser.rose.showName=function (){
+				alert('BBB')
+			}
+			CreateUser.tim.showName=function (){
+				alert('CCC')
+			}
+			//CreateUser的showName同名方法可以共存
+			CreateUser.jack.showName()
+			CreateUser.rose.showName()
+			CreateUser.tim.showName()
+			
+		</script>
+	</body>
+</html>

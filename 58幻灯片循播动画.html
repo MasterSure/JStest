@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 760px;
+				height: 160px;
+				background: #87CEEB;
+				/* padding: 20px; */
+				margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#box ul{
+				position: absolute;
+				/* background: orange; */
+				padding-top: 10px;
+			}
+			#box ul li{
+				/* 无缝 */
+				float: left;
+				list-style: none;
+				/* 有缝 */
+				/* display: inline-block; */
+			}
+			#box ul li img{
+				width: 200px;
+				height: 130px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li> <img src="image2.jpg" ></li>
+				<li> <img src="image3.jpg" ></li>
+				<li> <img src="image4.jpg" ></li>
+				<li> <img src="image5.jpg" ></li>
+				
+				<!-- <li> <img src="image2.jpg" ></li>
+				<li> <img src="image3.jpg" ></li>
+				<li> <img src="image4.jpg" ></li>
+				<li> <img src="image5.jpg" ></li> -->
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			let oDiv=document.getElementById("box")
+			let oUl=document.getElementsByTagName('ul')[0]
+			var aLi=document.getElementsByTagName('li')
+			
+			// oUl.innerHTML=oUl.innerHTML+oUl.innerHTML   // +：拼接
+			oUl.innerHTML+=oUl.innerHTML       //完全等价
+			oUl.style.width=aLi[0].offsetWidth*aLi.length+'px'
+			
+			function run(){
+				if (oUl.offsetLeft<-oUl.offsetWidth/2) {
+					oUl.style.left='0'
+				}else{
+				oUl.style.left=oUl.offsetLeft-2+'px'
+				}
+			}
+			
+			timerA=setInterval(run,30)
+			
+			oUl.onmouseover=function(){
+				clearInterval(timerA)
+			}
+			oUl.onmouseout=function(){
+				timerA=setInterval(run,30)
+			}
+		</script>
+	</body>
+</html>

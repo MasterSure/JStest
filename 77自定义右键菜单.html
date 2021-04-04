@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				font-size: 20px;
+			}
+			div{
+				width:100px;
+				height:130px;
+				background: #87CEEB;
+				position: absolute;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<p>您的QQ号码：</p>
+		<input type="text" placeholder="请输入QQ号码,回车提交" />
+		<div>
+			<ul>
+				<li>复制</li>
+				<li>粘贴</li>
+				<li>剪切</li>
+				<li>取消</li>
+			</ul>
+		</div>	
+			
+		<script type="text/javascript">
+			let $=document.querySelectorAll.bind(document)
+			//自定义右键菜单
+			document.oncontextmenu=function (e){
+				$('div')[0].style.display='block'
+				$('div')[0].style.left=e.clientX+'px'
+				$('div')[0].style.top=e.clientY+'px'
+				
+				//屏蔽原生菜单
+				return false
+			}            //召唤出来就不能消失了        怎么让一个函数停下来呢？ 怎么刷新这个函数呢？
+			
+			
+			//以下内容存在很多问题
+			document.onmousedown=function(e){
+				if(document==$('div')[0]){     //如何设置条件呢？
+					$('div')[0].style.display='block'
+				}else{
+					$('div')[0].style.display='none'
+				}
+			}
+			//
+		</script>
+	</body>
+</html>

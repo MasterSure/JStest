@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let str1='123abcde'
+			let str2='abcde456'
+			let str3='234abcde789'
+			
+			// ^表示头部,&表示尾部,[^……]里^表示排除
+			// let re=/[a-e]+/
+			// let re=/^a/
+			// let re=/^\d/
+			// let re=/[6-9]$/
+			let re=/^\d\w+[6-9]$/
+			
+			// .test()测试字符串中是否有匹配正则re的部分
+			if(re.test(str1)) {
+				alert('str1匹配')
+			}else{
+				alert('str1不匹配')
+			}
+			
+			if(re.test(str2)) {
+				alert('str2匹配')
+			}else{
+				alert('str2不匹配')
+			}
+			
+			if(re.test(str3)) {
+				alert('str3匹配')
+			}else{
+				alert('str3不匹配')
+			}
+			
+			
+		</script>
+	</body>
+</html>

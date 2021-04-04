@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function AAA() {
+				this.age=20
+			}
+			AAA.prototype.show=function () {
+				alert('年龄'+this.age)
+			}
+			//属性的继承
+			function BBB() {
+				AAA.call(this)
+			}
+			
+			// 原型方法的继承
+			BBB.prototype=AAA.prototype
+			
+			let obj = new BBB()
+			
+			alert(obj.age)
+			obj.show()
+		</script>
+	</body>
+</html>

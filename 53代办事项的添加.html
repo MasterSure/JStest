@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<p>代办事项</p>
+		<input type="text" id="text"  />
+		<input type="button" id="btn" value="创建待办" />
+		<ul id="list">
+			<li>买饮料</li>
+			<!-- <li></li> -->
+		</ul>
+		
+		<script type="text/javascript">
+			var oTxt=document.getElementById("text")
+			var oBtn=document.getElementById("btn")
+			var oUl=document.getElementById("list")
+			var aLi=document.getElementsByTagName('li')
+			
+			oBtn.onclick=function () {
+				//1.创建元素
+				var oLi=document.createElement('li')
+				//2.父节点末尾下挂子节点
+				// oUl.appendChild(oLi)
+				//父节点首位填入子节点
+				oUl.insertBefore(oLi,aLi[0])
+				
+				//3.向子节点填入用户输入值
+				oLi.innerHTML=oTxt.value
+			}
+		</script>
+	</body>
+</html>

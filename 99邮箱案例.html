@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="txt" placeholder="请输入正确邮箱地址" />
+		<button id="btn">提交注册</button>
+		
+		<script type="text/javascript">
+			let oTxt=document.getElementById("txt")
+			let oBtn=document.getElementById("btn")
+			
+			oBtn.onclick=function () {
+				let re=/^\w+   @   [a-z0-9]  +  \.[a-z]+$/
+				if (re.test(oTxt.value)) {
+					alert('提交成功')
+				} else{
+					alert('邮箱格式有误')
+				}
+			}
+		</script>
+	</body>
+</html>

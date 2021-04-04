@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<textarea rows="10" cols="50" id="ta1"></textarea>
+		<div>
+			<button type="button">过滤敏感词</button>
+		</div>
+		<textarea rows="10" cols="50"></textarea>
+		
+		<script type="text/javascript">
+			let $=document.querySelectorAll.bind(document)
+			
+			$('button')[0].onclick=function () {
+				$('textarea')[1].value=$('textarea')[0].value.replace(/<[^<>]+>/g,' ')
+			}
+		</script>
+	</body>
+</html>
